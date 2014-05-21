@@ -1,0 +1,114 @@
+﻿body
+{
+    font-family:'Microsoft YaHei';
+}
+
+ul, li
+{
+    list-style:none;
+}
+
+.head
+{
+    width:1000px;
+    height:110px;
+    margin:0 auto;
+    background-color:lightgray;
+    position:relative;
+    text-align:center;
+    background:url(../image/head.jpg) no-repeat top left;
+}
+    .head .accountInfo
+    {
+        position:relative;
+        float:right;
+        height:30px;
+        margin-right:20px;
+        margin-top:80px;
+        color:#FF9900;
+    }
+
+.foot
+{
+    width:1000px;
+    height:30px;
+    margin:0 auto;
+    background-color:lightgray;
+    position:relative;
+    text-align:center;
+    line-height:30px;
+    font-size:small;
+}
+.body
+{
+    width:1000px;
+    min-height:500px;
+    margin:0 auto;
+    position:relative;
+    background-color:#F7F9FD;
+}
+    .body .info
+    {
+        float:left;
+        margin-left:50px;
+        margin-top: 100px;
+        width: 450px;
+        height: 200px;
+        background-color: #F3F3F3;
+        position: relative;
+        text-align: center;
+        padding-top:40px;
+    }
+
+
+    .body .loginbox
+    {
+        float:right;
+        padding-top:40px;
+        margin-right:50px;
+        margin-top: 100px;
+        width: 450px;
+        height: 200px;
+        background-color: #F3F3F3;
+        position: relative;
+        text-align: center;
+    }
+
+.path
+{
+    height:30px;
+    padding-top:10px;
+    padding-left:10px;
+    position:relative;
+}
+
+.document
+{
+    padding-top:20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position:relative;
+}
+    .document .documentButton
+    {
+        border: 2px solid #007ACC;
+        background-color: #007ACC;
+        color: white;
+        cursor: pointer;
+        position: relative;
+        margin-right: 20px;
+    }
+    .document .documentInfo
+    {
+        margin-right:20px;
+        position:relative;
+        color:#FF9900;
+    }
+    .document .documentBody
+    {
+        margin-top:20px;
+        position:relative;
+    }
+
+
+
