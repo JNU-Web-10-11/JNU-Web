@@ -11,4 +11,15 @@ public partial class teacher_Default : System.Web.UI.Page
     {
 
     }
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        //在此加入课件页面的链接
+        Response.Redirect("#");
+    }
+
+    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        Session["course"] = GridView1.Rows[e.RowIndex].Cells[0].Text;
+        Response.Redirect("Document.aspx");
+    }
 }

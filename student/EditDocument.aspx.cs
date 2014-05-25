@@ -45,6 +45,7 @@ public partial class student_EditDocument : System.Web.UI.Page
                 c.Body = textarea1.Value;
                 c.Date = DateTime.Now;
                 c.Class = Textbox2.Text;
+                c.Status = 0;
             }
 
             data.SubmitChanges();
@@ -63,7 +64,11 @@ public partial class student_EditDocument : System.Web.UI.Page
             c.Status = 0;
             data.Table_Document.InsertOnSubmit(c);
             data.SubmitChanges();
-            Session["document"] = c.Id;
+            DataClassesDataContext d = new DataClassesDataContext();
+            var q = (from s in d.Table_Document
+                     where s.Author == Session["name"].ToString()
+                     select s.Id).Max();
+            Session["document"] = q;
             Response.Redirect("ReadDocument.aspx");
         }
     }
