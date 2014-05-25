@@ -7,7 +7,7 @@
         当前位置： <a href="Default.aspx">课程选择</a>>><a href="Document.aspx">资料</a>
     </div>
     <asp:ScriptManager ID="ScriptManager" runat="server" />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="LinqDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDeleting="GridView1_RowDeleting" >
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="LinqDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDataBound="GridView1_RowDataBound" >
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" SortExpression="Id">
@@ -28,14 +28,7 @@
             <asp:CommandField SelectText="进入阅读" ShowSelectButton="True">
             <HeaderStyle Width="100px" HorizontalAlign="Left" />
             </asp:CommandField>
-            <asp:TemplateField ShowHeader="False">
-                <ItemTemplate>
-                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" CommandName="Delete" Text="删除" OnClientClick="return confirm('确认要删除此行信息吗？')" >
-
-                    </asp:LinkButton>
-                </ItemTemplate>
-                <HeaderStyle Width="100px" />
-            </asp:TemplateField>
+            <asp:CommandField ShowDeleteButton="True" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

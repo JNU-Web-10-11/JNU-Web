@@ -12,20 +12,21 @@ public partial class admin_Document : System.Web.UI.Page
        
       
     }
-    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    {
-        DataClassesDataContext data = new DataClassesDataContext();
-        var q = from s in data.Table_Document
-                where s.Id == Convert.ToInt32(GridView1.Rows[e.RowIndex].Cells[0].Text)
-                select s;
-        data.Table_Document.DeleteAllOnSubmit(q);
-        data.SubmitChanges();
-        GridView1.DataBind();
-    }
+    
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
         Session["document"] = Convert.ToInt32(GridView1.SelectedRow.Cells[0].Text);
         Response.Redirect("ReadDocument.aspx");
     }
-    
+
+    protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+             if (e.Row.RowState == DataControlRowState.Normal || e.Row.RowState == DataControlRowState.Alternate)
+            {
+                ((LinkButton)e.Row.Cells[6].Controls[0]).Attributes.Add("onclick", "javascript:return confirm('确认删除：\"" + e.Row.Cells[1].Text + "\"吗?')");
+            }
+        }
+    }
 }
