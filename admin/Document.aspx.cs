@@ -9,6 +9,7 @@ public partial class admin_Document : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+       
       
     }
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -25,11 +26,6 @@ public partial class admin_Document : System.Web.UI.Page
     {
         Session["document"] = Convert.ToInt32(GridView1.SelectedRow.Cells[0].Text);
         Response.Redirect("ReadDocument.aspx");
-    }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Session["document"] = null;
-        Response.Redirect("EditDocument.aspx");
     }
     
 }

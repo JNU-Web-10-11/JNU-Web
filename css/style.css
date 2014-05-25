@@ -80,6 +80,8 @@ ul, li
     padding-top:10px;
     padding-left:10px;
     position:relative;
+    top: 0px;
+    left: 0px;
 }
 
 .document

@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="path">
-        当前位置： <a href="Default.aspx">课程选择</a>>><a href="Document.aspx">资料</a>>><a href="ReadDocument.aspx">阅读</a>>><a href="EditDocument.aspx">编辑</a>
+        当前位置： <a href="Default.aspx">课程选择</a>>><a href="Document.aspx">资料</a>>><a href="EditDocument.aspx">编辑</a>
     </div>
     <div class="document">
         标题： 
