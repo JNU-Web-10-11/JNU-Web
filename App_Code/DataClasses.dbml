@@ -48,4 +48,14 @@
       <Column Name="Course" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
     </Type>
   </Table>
+  <Table Name="dbo.Table_Coursefile" Member="Table_Coursefile">
+    <Type Name="Table_Coursefile">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Coursefile" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Course" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Downloadtimes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoursefileURL" Type="System.String" DbType="NChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>
