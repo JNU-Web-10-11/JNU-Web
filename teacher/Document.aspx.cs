@@ -9,7 +9,11 @@ public partial class teacher_Document : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!IsPostBack)
+        {
+            if (Session["type"] == null || Session["type"].ToString() != "教师")
+                Response.Redirect("~/Redirect.html");
+        }
 
 
     }

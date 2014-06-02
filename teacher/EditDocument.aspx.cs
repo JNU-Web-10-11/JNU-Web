@@ -10,7 +10,11 @@ public partial class teacher_EditDocument : System.Web.UI.Page
     protected static Table_Document document = new Table_Document();
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!IsPostBack)
+        {
+            if (Session["type"] == null || Session["type"].ToString() != "教师")
+                Response.Redirect("~/Redirect.html");
+        }
         if (!IsPostBack)
         {
             if (Session["document"] != null)

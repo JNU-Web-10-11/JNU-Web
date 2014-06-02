@@ -10,7 +10,11 @@ public partial class student_EditDocument : System.Web.UI.Page
     protected static Table_Document document = new Table_Document(); 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        if (!IsPostBack)
+        {
+            if (Session["type"] == null || Session["type"].ToString() != "学生")
+                Response.Redirect("~/Redirect.html");
+        }
         if (!IsPostBack)
         {
             if (Session["document"] != null)

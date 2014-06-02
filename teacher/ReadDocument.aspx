@@ -22,4 +22,63 @@
         <br />
         <div class="documentBody"><%=document.Body %></div>
     </div>
+    <!-- 评论板块 -->
+    <hr align="center" width="90%" />
+    <asp:ScriptManager ID="ScriptManager1" runat="server" ></asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <ContentTemplate>
+    <div  style="width:400px;margin-left:50px;word-break:break-all">
+
+    <strong><%=document.Name+"的评论：" %></strong><br />
+    <%
+        if (comments.Count()==0)
+        {
+            %>（暂无任何评论）<%
+            
+        }
+        else
+        {
+            int i = 1;
+            foreach (Table_DocumentComment c in comments)
+            {
+                %><%=i.ToString() + ". " + c.AccountName + "【" + c.AccountType + "】" %><br />&nbsp;&nbsp;<%=c.Comment %>&nbsp;&nbsp;<div align="right" style="font-size:small"><%=c.Date.ToString()%></div>
+                <hr  width="95%" />
+                <%
+                i++;
+            }
+        }
+        %>
+    </div>
+    <div  style="width:400px;margin-left:50px">
+    <br /><br />
+    <strong>发表评论</strong><br />
+    称呼:
+    <%
+        if (Session["name"] == null)
+        {
+            %>
+            游客（未登录）
+            <%
+        }
+        else
+        {
+            %>
+            <%=Session["name"] + "【" + Session["type"] + "】"%>
+            <%
+        }
+         %>
+    <br />
+    内容:<br />
+    <asp:TextBox ID="textbox1" runat="server" TextMode="MultiLine" Columns="70" Rows="10" MaxLength="1000"/><br />
+    
+    验证码：
+    <asp:TextBox id="textbox2" runat="server" Columns="2" MaxLength="4"/>
+    <asp:Image ID="ValiCode" runat="server" ImageUrl="../ValiCode.aspx"  />
+    <br />
+    <asp:Button ID="button3" Width="60px" runat="server" Text="评论" onclick="button1_Click" CssClass="button"/>
+    <asp:Label ID="Label1" runat="server"  ForeColor="Red" />
+    </div>
+    <br /><br /><br />
+    </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>

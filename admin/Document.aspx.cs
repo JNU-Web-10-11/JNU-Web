@@ -9,7 +9,11 @@ public partial class admin_Document : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+        if (!IsPostBack)
+        {
+            if (Session["type"] == null || Session["type"].ToString() != "管理员")
+                Response.Redirect("~/Redirect.html");
+        }
       
     }
     

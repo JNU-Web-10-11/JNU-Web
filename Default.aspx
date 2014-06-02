@@ -14,7 +14,7 @@
             <tr><td align="left">登陆类型:</td><td align="left"><asp:DropDownList ID="DropDownList1" runat="server"><asp:ListItem>学生</asp:ListItem><asp:ListItem>教师</asp:ListItem>
                 <asp:ListItem>管理员</asp:ListItem>
                 </asp:DropDownList></td></tr>
-            <tr><td align="left"><asp:Button ID="Button1" runat="server" Text="登陆" OnClick="Button1_Click" style="height: 21px" /></td></tr>
+            <tr><td align="left"><asp:Button ID="Button1" runat="server" Text="登陆" OnClick="Button1_Click" style="height: 21px"  CssClass="button"/></td></tr>
         </table>        
     </div>
 </asp:Content>

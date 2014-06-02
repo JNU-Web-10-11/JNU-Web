@@ -1,6 +1,7 @@
 ﻿body
 {
     font-family:'Microsoft YaHei';
+    background-color:white;
 }
 
 ul, li
@@ -82,6 +83,16 @@ ul, li
     position:relative;
     top: 0px;
     left: 0px;
+}
+
+.button
+{
+    border: 2px solid #007ACC;
+    background-color: #007ACC;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    margin-right: 20px;
 }
 
 .document

@@ -19,7 +19,7 @@
                 未登录
                 <%}else{ %>
                 欢迎，<%=Session["name"].ToString() %>[<%=Session["type"].ToString() %>]
-                <asp:Button ID="Button1" runat="server" Text="注销" OnClick="Button1_Click"/>
+                <asp:Button ID="Button1" runat="server" Text="注销" OnClick="Button1_Click" CssClass="button"/>
                 <%} %>
             </div>
 

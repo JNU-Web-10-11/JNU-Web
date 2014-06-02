@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="script/jquery-1.11.0.min.js"  type="text/javascript"></script>
+    <script>
+        var secs = 5;
+        var URL;
+        function Load(url) {
+            URL = url;
+            for (var i = secs; i >= 0; i--) {
+                window.setTimeout('doUpdate(' + i + ')', (secs - i) * 1000);
+            }
+        }
+        function doUpdate(num) {
+            $("#Redirect").html('非法访问，将在' + num + '秒后自动跳转到主页');
+            if (num == 0) { window.location = URL; }
+        }
+    </script> 
+</head> 
+<body style="text-align:center"> 
+    <div id="Redirect" style="margin:0 auto;position:relative"></div> 
+    <br />
+    <a href="Default.aspx">点击此处快速跳转</a>
+    <script>
+        $(document).ready(function () {
+            Load("Default.aspx");
+        });
+    </script> 
+</body>
+</html>
