@@ -9,7 +9,7 @@
     <asp:ScriptManager ID="ScriptManager" runat="server" />
     <asp:UpdatePanel ID="UpdatePanel" runat="server">
     <ContentTemplate>  
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="LinqDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="LinqDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" AllowSorting="True" >
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" SortExpression="Id">
@@ -48,7 +48,12 @@
             <asp:Parameter DefaultValue="1" Name="Status" Type="Int32" />
         </WhereParameters>
     </asp:LinqDataSource>
-    <asp:GridView Visible="False" ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="LinqDataSource2" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" >
+    
+    <div class="document" >
+        <asp:Button Id="Button1" runat="server" Text="撰写资料" CssClass="documentButton" OnClick="Button1_Click"/>
+        <asp:Button Id="Button2" runat="server" Text="我的资料" CssClass="documentButton" OnClick="Button2_Click"/>
+    </div>
+    <asp:GridView Visible="False" ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="LinqDataSource2" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" AllowPaging="True" AllowSorting="True" >
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" SortExpression="Id" InsertVisible="False">
@@ -92,11 +97,6 @@
             <asp:SessionParameter Name="Author" SessionField="name" Type="String" />
         </WhereParameters>
     </asp:LinqDataSource>
-    <div class="document">
-        <asp:Button Id="Button1" runat="server" Text="撰写资料" CssClass="documentButton" OnClick="Button1_Click"/>
-        <asp:Button Id="Button2" runat="server" Text="我的资料" CssClass="documentButton" OnClick="Button2_Click"/>
-    </div>
-    
     </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
